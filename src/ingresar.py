@@ -12,7 +12,7 @@ load_dotenv()
 #https://www.datos.gov.co/api/v3/views/nfa3-wgxy/query.json
 URL = "https://www.datos.gov.co/resource/nfa3-wgxy.json"
 TAMANO_PAGINA = 10_000
-SALIDA = Path("data/raw/accidentalidad_completo.jsonl")
+SALIDA = Path("../data/raw/accidentalidad_completo.jsonl")
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger(__name__)
