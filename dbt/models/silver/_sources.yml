@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: bronze
+    schema: bronze
+    description: Datos crudos cargados desde el bucket (todo como texto)
+    tables:
+      - name: accidentalidad_raw
