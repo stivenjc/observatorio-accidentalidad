@@ -74,13 +74,19 @@ python src/subir_a_bucket.py      # archivo -> Cloud Storage
 python src/cargar_a_bigquery.py   # bucket -> BigQuery bronze
 ```
 
-Luego ejecutar en BigQuery, en orden, los archivos de `sql/` (silver y después gold).
+Luego, desde la carpeta `dbt/`, con el perfil configurado en `~/.dbt/profiles.yml`
+(método `oauth`, ubicación `us-central1`):
+
+```bash
+dbt run     # construye silver y gold
+dbt test    # ejecuta las pruebas de calidad
+```
 
 ## Estructura
 
 ```
 src/       pipeline de ingesta y carga
-sql/       transformaciones de silver y gold
+dbt/       modelos de silver y gold, pruebas y documentación
 scripts/   exploración y pruebas de conexión
 docs/      documentación
 ```
