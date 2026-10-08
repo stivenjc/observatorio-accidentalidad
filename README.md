@@ -22,6 +22,9 @@ flowchart LR
   E --> F[(BigQuery<br/>gold)]
 ```
 
+![Mapa de dependencias de dbt](docs/dbt_lineage.png)
+Las tres dimensiones sin flechas (`dim_servicio`, `dim_tipo_accidente`, `dim_vehiculo`) son listas de referencia escritas a mano; la tabla de hechos se une a ellas por valor y su integridad la vigilan las pruebas `relationships`.
+
 | Capa | Contenido |
 |---|---|
 | **Raw (bucket)** | Archivo tal como lo entrega la API, inmutable, en carpetas por fecha de ingesta |
@@ -88,7 +91,7 @@ docs/      documentación
 - [x] Carga a bucket con verificación de integridad
 - [x] Carga a BigQuery idempotente
 - [x] Silver y gold
-- [ ] Transformaciones con dbt y pruebas de calidad
+- [x] Transformaciones con dbt y pruebas de calidad
 - [ ] Orquestación con Airflow y carga incremental
 - [ ] Infraestructura como código (Terraform)
 - [ ] CI con GitHub Actions
