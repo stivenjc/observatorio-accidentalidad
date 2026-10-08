@@ -78,8 +78,8 @@ Luego, desde la carpeta `dbt/`, con el perfil configurado en `~/.dbt/profiles.ym
 (método `oauth`, ubicación `us-central1`):
 
 ```bash
-dbt run     # construye silver y gold
-dbt test    # ejecuta las pruebas de calidad
+dbt run --target prod    # construye silver y gold
+dbt test --target prod   # ejecuta las pruebas de calidad
 ```
 
 ## Estructura
