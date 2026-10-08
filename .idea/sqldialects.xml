@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/dbt/models/gold/dim_fecha.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/dbt/models/gold/dim_servicio.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/dbt/models/gold/dim_tipo_accidente.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/dbt/models/gold/dim_vehiculo.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/dbt/models/gold/fact_vehiculos_accidente.sql" dialect="GenericSQL" />
+  </component>
+</project>

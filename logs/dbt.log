@@ -1,0 +1,102 @@
+[0m15:20:28.416361 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa9d3f6e590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa9d3f76290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa9d3f6d9d0>]}
+
+
+============================== 15:20:28.419226 | 1b49f25d-1b21-4b6e-a89a-07907e9f7a7b ==============================
+[0m15:20:28.419226 [info ] [MainThread]: Running with dbt=1.12.5
+[0m15:20:28.419682 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'invocation_command': 'dbt init observatorio-accidentalidad', 'warn_error': 'None', 'partial_parse': 'True', 'log_path': 'logs', 'profiles_dir': '/home/stivenjc/.dbt', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'log_format': 'default', 'write_json': 'True', 'maximum_seed_size_mib': '1', 'hints_enabled': 'True', 'indirect_selection': 'eager', 'printer_width': '80', 'quiet': 'False', 'empty': 'None', 'target_path': 'None', 'debug': 'False', 'version_check': 'True', 'no_print': 'None', 'use_colors': 'True', 'fail_fast': 'False'}
+[0m15:21:32.832925 [debug] [MainThread]: Starter project path: /home/stivenjc/PycharmProjects/observatorio-accidentalidad/.venv/lib/python3.11/site-packages/dbt/include/starter_project
+[0m15:21:32.835712 [info ] [MainThread]: Setting up your profile.
+[0m15:26:09.424186 [info ] [MainThread]: Profile observatorio_accidentalidad written to /home/stivenjc/.dbt/profiles.yml using target's profile_template.yml and your supplied values.
+[0m15:26:09.426082 [info ] [MainThread]: Running dbt debug to validate the project...
+[0m15:26:09.426881 [info ] [MainThread]: dbt version: 1.12.5
+[0m15:26:09.427329 [info ] [MainThread]: python version: 3.11.2
+[0m15:26:09.427855 [info ] [MainThread]: python path: /home/stivenjc/PycharmProjects/observatorio-accidentalidad/.venv/bin/python
+[0m15:26:09.428348 [info ] [MainThread]: os info: Linux-6.12.95+deb12-amd64-x86_64-with-glibc2.36
+[0m15:26:09.478117 [info ] [MainThread]: Using profiles dir at /home/stivenjc/.dbt
+[0m15:26:09.478523 [info ] [MainThread]: Using profiles.yml file at /home/stivenjc/.dbt/profiles.yml
+[0m15:26:09.478778 [info ] [MainThread]: Using dbt_project.yml file at /home/stivenjc/PycharmProjects/observatorio-accidentalidad/observatorio_accidentalidad/dbt_project.yml
+[0m15:26:09.479027 [info ] [MainThread]: adapter type: bigquery
+[0m15:26:09.479410 [info ] [MainThread]: adapter version: 1.12.1
+[0m15:26:09.563281 [info ] [MainThread]: Configuration:
+[0m15:26:09.563692 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m15:26:09.563973 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m15:26:09.564222 [info ] [MainThread]: Required dependencies:
+[0m15:26:09.564497 [debug] [MainThread]: Executing "git --help"
+[0m15:26:09.569260 [debug] [MainThread]: STDOUT: "b"uso: git [-v | --version] [-h | --help] [-C <ruta>] [-c <nombre>=<valor>]\n           [--exec-path[=<ruta>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<ruta>] [--work-tree=<ruta>] [--namespace=<nombre>]\n           [--super-prefix=<ruta>] [--config-env=<nombre>=<variable-de-entorno>]\n           <comando> [<argumentos>]\n\nEstos son comandos comunes de Git usados en varias situaciones:\n\ncomenzar un \xc3\xa1rea de trabajo (mira tambi\xc3\xa9n: git help tutorial)\n   clone     Clonar un repositorio dentro de un nuevo directorio\n   init      Crear un repositorio de Git vac\xc3\xado o reinicia el que ya existe\n\ntrabajar en los cambios actuales (mira tambi\xc3\xa9n: git help everyday)\n   add       Agregar contenido de archivos al \xc3\xadndice\n   mv        Mover o cambiar el nombre a archivos, directorios o enlaces simb\xc3\xb3licos\n   restore   Restaurar archivos del \xc3\xa1rbol de trabajo\n   rm        Borrar archivos del \xc3\xa1rbol de trabajo y del \xc3\xadndice\n\nexaminar el historial y el estado (mira tambi\xc3\xa9n: git help revisions)\n   bisect    Usar la b\xc3\xbasqueda binaria para encontrar el commit que introdujo el bug\n   diff      Mostrar los cambios entre commits, commit y \xc3\xa1rbol de trabajo, etc\n   grep      Imprimir las l\xc3\xadneas que concuerden con el patr\xc3\xb3n\n   log       Mostrar los logs de los commits\n   show      Mostrar varios tipos de objetos\n   status    Mostrar el estado del \xc3\xa1rbol de trabajo\n\ncrecer, marcar y ajustar tu historial com\xc3\xban\n   branch    Listar, crear, o borrar ramas\n   commit    Grabar los cambios al repositorio\n   merge     Juntar dos o m\xc3\xa1s historiales de desarrollo juntos\n   rebase    Volver a aplicar commits en la punta de otra rama\n   reset     Reiniciar el HEAD actual a un estado espec\xc3\xadfico\n   switch    Cambiar de branch\n   tag       Crear, listar, borrar o verificar un objeto de tag firmado con GPG\n\ncolaborar (mira tambi\xc3\xa9n: git help workflows)\n   fetch     Descargar objetos y referencias de otro repositorio\n   pull      Realizar un fetch e integra con otro repositorio o rama local\n   push      Actualizar referencias remotas junto con sus objetos asociados\n\n'git help -a' y 'git help -g' listan los subcomandos disponibles y algunas\ngu\xc3\xadas de concepto. Consulta 'git help <command>' o 'git help <concepto>'\npara leer sobre un subcomando o concepto espec\xc3\xadfico.\nMira 'git help git' para una vista general del sistema.\n""
+[0m15:26:09.569709 [debug] [MainThread]: STDERR: "b''"
+[0m15:26:09.569955 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m15:26:09.570291 [info ] [MainThread]: Connection:
+[0m15:26:09.570716 [info ] [MainThread]:   method: oauth
+[0m15:26:09.571029 [info ] [MainThread]:   database: fullproject-510120
+[0m15:26:09.571329 [info ] [MainThread]:   execution_project: fullproject-510120
+[0m15:26:09.571663 [info ] [MainThread]:   schema: dbt_dev
+[0m15:26:09.571973 [info ] [MainThread]:   location: US
+[0m15:26:09.572267 [info ] [MainThread]:   priority: interactive
+[0m15:26:09.572598 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m15:26:09.572963 [info ] [MainThread]:   reservation: None
+[0m15:26:09.573280 [info ] [MainThread]:   impersonate_service_account: None
+[0m15:26:09.573605 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m15:26:09.573910 [info ] [MainThread]:   job_retries: 1
+[0m15:26:09.574208 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m15:26:09.574503 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m15:26:09.574806 [info ] [MainThread]:   job_link_info_level_log: False
+[0m15:26:09.575255 [info ] [MainThread]:   timeout_seconds: 300
+[0m15:26:09.575664 [info ] [MainThread]:   client_id: None
+[0m15:26:09.576011 [info ] [MainThread]:   token_uri: None
+[0m15:26:09.576315 [info ] [MainThread]:   compute_region: None
+[0m15:26:09.576610 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m15:26:09.576948 [info ] [MainThread]:   gcs_bucket: None
+[0m15:26:09.577246 [info ] [MainThread]:   dataproc_batch: None
+[0m15:26:09.577670 [info ] [MainThread]: Registered adapter: bigquery=1.12.1
+[0m15:26:09.683874 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m15:26:09.684259 [debug] [MainThread]: On debug: select 1 as id
+[0m15:26:09.684582 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:26:12.560701 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=fullproject-510120&j=bq:US:33131a78-9240-4db4-8ac1-77108524eff1&page=queryresults
+[0m15:26:13.016233 [debug] [MainThread]: SQL status: OK in 0.455 seconds
+[0m15:26:13.470463 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m15:26:13.470932 [info ] [MainThread]: [32mAll checks passed![0m
+[0m15:26:13.471275 [info ] [MainThread]: Your new dbt project "observatorio_accidentalidad" was created!
+Initialized new project in /home/stivenjc/PycharmProjects/observatorio-accidentalidad/observatorio_accidentalidad/observatorio_accidentalidad
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m15:26:13.471918 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 345.11652, "process_in_blocks": "125736", "process_kernel_time": 0.434099, "process_mem_max_rss": "236336", "process_out_blocks": "104", "process_user_time": 2.84355}
+[0m15:26:13.472846 [debug] [MainThread]: Command `dbt init` succeeded at 15:26:13.472661 after 345.12 seconds
+[0m15:26:13.473351 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m15:26:13.473913 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa9d4242ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa9d3f75ed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa9d40d7610>]}
+[0m15:26:13.474539 [debug] [MainThread]: Flushing usage events
+[0m15:26:14.107937 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:39:18.701056 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f11477e8e10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f11477df950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f11477e8cd0>]}
+
+
+============================== 15:39:18.703360 | 9f216e01-3837-41c1-b1f4-5235532b66f2 ==============================
+[0m15:39:18.703360 [info ] [MainThread]: Running with dbt=1.12.5
+[0m15:39:18.703860 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_format': 'default', 'log_path': 'logs', 'no_print': 'None', 'static_parser': 'True', 'profiles_dir': '/home/stivenjc/.dbt', 'write_json': 'True', 'maximum_seed_size_mib': '1', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'warn_error': 'None', 'use_colors': 'True', 'hints_enabled': 'True', 'introspect': 'True', 'empty': 'None', 'version_check': 'True', 'debug': 'False', 'invocation_command': 'dbt debug', 'log_cache_events': 'False', 'printer_width': '80', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'partial_parse': 'True'}
+[0m15:39:18.710711 [info ] [MainThread]: dbt version: 1.12.5
+[0m15:39:18.711116 [info ] [MainThread]: python version: 3.11.2
+[0m15:39:18.711415 [info ] [MainThread]: python path: /home/stivenjc/PycharmProjects/observatorio-accidentalidad/.venv/bin/python
+[0m15:39:18.711702 [info ] [MainThread]: os info: Linux-6.12.95+deb12-amd64-x86_64-with-glibc2.36
+[0m15:39:19.336639 [info ] [MainThread]: Using profiles dir at /home/stivenjc/.dbt
+[0m15:39:19.337057 [info ] [MainThread]: Using profiles.yml file at /home/stivenjc/.dbt/profiles.yml
+[0m15:39:19.337341 [info ] [MainThread]: Using dbt_project.yml file at /home/stivenjc/PycharmProjects/observatorio-accidentalidad/dbt_project.yml
+[0m15:39:19.337682 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m15:39:19.338254 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.69571567, "process_in_blocks": "22456", "process_kernel_time": 0.274847, "process_mem_max_rss": "226496", "process_out_blocks": "8", "process_user_time": 2.525408}
+[0m15:39:19.338904 [debug] [MainThread]: Command `dbt debug` failed at 15:39:19.338821 after 0.70 seconds
+[0m15:39:19.339254 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f11477d79d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f11477d6850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f11477d6990>]}
+[0m15:39:19.339640 [debug] [MainThread]: Flushing usage events
+[0m15:39:19.956453 [debug] [MainThread]: An error was encountered while trying to flush usage events
