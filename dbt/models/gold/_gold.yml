@@ -1,0 +1,74 @@
+version: 2
+
+models:
+  - name: dim_servicio
+    description: Tipos de servicio del vehículo con su etiqueta legible
+    columns:
+      - name: servicio
+        description: Clave del servicio (valor normalizado de silver)
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_tipo_accidente
+    description: Tipos de accidente con su etiqueta legible
+    columns:
+      - name: clase_accidente
+        description: Clave del tipo de accidente (valor normalizado de silver)
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_vehiculo
+    description: Las 37 clases de vehículo y su categoría de análisis
+    columns:
+      - name: clase_vehiculo
+        description: Clase de vehículo tal como viene normalizada en silver
+        data_tests:
+          - unique
+          - not_null
+      - name: categoria_vehiculo
+        description: Categoría agrupada para análisis
+        data_tests:
+          - not_null
+
+  - name: dim_fecha
+    description: Calendario con un día por fila, de la primera a la última fecha con datos
+    columns:
+      - name: fecha
+        description: Día del calendario
+        data_tests:
+          - unique
+          - not_null
+
+  - name: fact_vehiculos_accidente
+    description: Vehículos involucrados por fecha, dirección, tipo de accidente, servicio y clase de vehículo
+    columns:
+      - name: fecha
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_fecha')
+                field: fecha
+      - name: clase_accidente
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_tipo_accidente')
+                field: clase_accidente
+      - name: servicio
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_servicio')
+                field: servicio
+      - name: clase_vehiculo
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_vehiculo')
+                field: clase_vehiculo
+      - name: vehiculos_involucrados
+        data_tests:
+          - not_null
