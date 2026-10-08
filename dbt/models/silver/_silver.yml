@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: accidentalidad
+    description: Accidentes con vehículos, limpios y con tipos correctos
+    columns:
+      - name: fecha_accidente
+        description: Día del accidente (tipo DATE)
+        data_tests:
+          - not_null
+      - name: direccion_accidente
+        data_tests:
+          - not_null
+      - name: clase_accidente
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['CHOQUE', 'ATROPELLO', 'CAIDA OCUPANTE', 'VOLCAMIENTO', 'OTRO', 'INCENDIO']
+      - name: servicio_vehiculo_accidentado
+        data_tests:
+          - not_null
+      - name: clase_vehiculo_accidentado
+        data_tests:
+          - not_null
+      - name: cantidad_accidentes
+        data_tests:
+          - not_null
