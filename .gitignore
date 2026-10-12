@@ -5,3 +5,8 @@ data/
 .venv-airflow/
 airflow/*
 !airflow/dags/
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+crash.log

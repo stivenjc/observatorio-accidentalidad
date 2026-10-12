@@ -95,16 +95,28 @@ docs/      documentación
 
 - [x] Ingesta paginada desde la API, con reintentos y verificación de conteo
 - [x] Carga a bucket con verificación de integridad
-- [x] Carga a BigQuery idempotente
+- [x] Carga a BigQuery idempotente (reemplazo total de bronze)
 - [x] Silver y gold
 - [x] Transformaciones con dbt y pruebas de calidad
-- [ ] Orquestación con Airflow y carga incremental
+- [x] Orquestación con Airflow: DAG semanal que detecta datos nuevos y omite el resto si no los hay
+- [x] Prueba completa del DAG de punta a punta con la cuenta de servicio
+- [ ] Alertas de fallo
+- [ ] Dockerizar Airflow
 - [ ] Infraestructura como código (Terraform)
 - [ ] CI con GitHub Actions
+- [ ] Carga incremental (evaluada; no necesaria con el volumen actual)
 - [ ] Dashboard público
+
 
 ## Limitaciones conocidas
 
 - No hay identificador de accidente: los "accidentes" solo pueden aproximarse.
 - Los datos no incluyen gravedad, hora ni coordenadas.
 - La normalización de direcciones está pendiente.
+
+## Decisiones de diseño
+
+- **Recarga completa de bronze** en cada ejecución: el dataset es pequeño (51 mil filas; `dbt run` tarda unos 16 segundos) y crece poco. Evita duplicados y corrige solo los cambios de la fuente. La carga incremental (ventana de meses más recarga completa periódica) se evaluó y se descartó por ahora.
+- **Detección de datos nuevos** comparando el total de filas de la API con el de bronze; si coinciden, el flujo se omite. Limitación: no detecta correcciones que no cambien el total.
+- **Frecuencia semanal**: la fuente se publica con meses de retraso y la revisión es una sola petición pequeña.
+- **Autenticación sin llaves**: el pipeline usa una cuenta de servicio con impersonación, con permisos mínimos.
