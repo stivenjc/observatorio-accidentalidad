@@ -18,8 +18,11 @@ flowchart LR
   A[API datos.gov.co] --> B[Python: ingesta]
   B --> C[(Cloud Storage<br/>raw JSONL)]
   C --> D[(BigQuery<br/>bronze)]
-  D --> E[(BigQuery<br/>silver)]
-  E --> F[(BigQuery<br/>gold)]
+  D --> E[dbt]
+  E --> F[(silver)]
+  F --> G[(gold)]
+  AF{{Airflow<br/>DAG semanal}} -.orquesta.-> B
+  AF -.orquesta.-> E
 ```
 
 ![Mapa de dependencias de dbt](docs/dbt_lineage.png)
@@ -103,7 +106,7 @@ docs/      documentación
 - [ ] Alertas de fallo
 - [ ] Dockerizar Airflow
 - [x] Infraestructura como código (Terraform)
-- [ ] CI con GitHub Actions
+- [x] CI con GitHub Actions
 - [ ] Carga incremental (evaluada; no necesaria con el volumen actual)
 - [ ] Dashboard público
 
