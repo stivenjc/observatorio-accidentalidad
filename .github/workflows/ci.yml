@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  calidad:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt ruff
+
+      - name: Revisar el código Python (ruff)
+        run: ruff check src scripts airflow/dags
+
+      - name: Crear un perfil de dbt de prueba (sin conexión real)
+        run: |
+          mkdir -p ~/.dbt
+          cat > ~/.dbt/profiles.yml <<'EOF'
+          observatorio_accidentalidad:
+            target: dev
+            outputs:
+              dev:
+                type: bigquery
+                method: oauth
+                project: fullproject-510120
+                dataset: dbt_ci
+                location: us-central1
+                threads: 1
+          EOF
+
+      - name: Validar el proyecto dbt
+        working-directory: dbt
+        run: dbt parse
