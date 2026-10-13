@@ -102,7 +102,7 @@ docs/      documentación
 - [x] Prueba completa del DAG de punta a punta con la cuenta de servicio
 - [ ] Alertas de fallo
 - [ ] Dockerizar Airflow
-- [ ] Infraestructura como código (Terraform)
+- [x] Infraestructura como código (Terraform)
 - [ ] CI con GitHub Actions
 - [ ] Carga incremental (evaluada; no necesaria con el volumen actual)
 - [ ] Dashboard público
